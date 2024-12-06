@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Typography, Card, CardContent, CardActionArea, Grid } from '@mui/material';
 
@@ -28,6 +28,36 @@ const operations = [
     requiresInput: true
   },
   {
+    name: "Actualizar un Proveedor (RF3)",
+    method: "POST",
+    endpoint: "http://localhost:8080/SuperAndes/proveedores/{id}/edit/save",
+    requiresInput: true
+  },
+  {
+    name: "Crear una Categoría Producto (RF4)",
+    method: "POST",
+    endpoint: "http://localhost:8080/SuperAndes/categorias/new/save",
+    requiresInput: true
+  },
+  {
+    name: "Crear un Producto (RF5)",
+    method: "POST",
+    endpoint: "http://localhost:8080/SuperAndes/productos/new/save",
+    requiresInput: true
+  },
+  {
+    name: "Crear una Orden de Compra (RF6)",
+    method: "POST",
+    endpoint: "http://localhost:8080/SuperAndes/ordenes/new/save",
+    requiresInput: true
+  },
+  {
+    name: "Leer una Orden de Compra (RF7)",
+    method: "GET",
+    endpoint: "http://localhost:8080/SuperAndes/ordenes/",
+    requiresInput: true
+  },
+  {
     name: "Mostrar Productos Según Características (RFC1)",
     method: "GET",
     endpoint: "http://localhost:8080/SuperAndes/productos/productosSegunSpecs?precio_min=0&precio_max=100000&fecha=2024/11/14&categoria_id=674be5e74919601a45196336&sucursal_id=674bd732280b802a9e843f2a",
@@ -46,10 +76,8 @@ const Home = () => {
 
   const handleSelectOperation = (op) => {
     if (op.requiresInput) {
-      // Vamos a la página de formulario para recolectar datos
       navigate("/form", { state: { operation: op } });
     } else {
-      // No requiere datos, vamos directo a resultados
       navigate("/results", { state: { operation: op } });
     }
   };
@@ -66,7 +94,6 @@ const Home = () => {
               <CardActionArea onClick={() => handleSelectOperation(op)}>
                 <CardContent sx={{ minHeight: 120, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <Typography variant="h6" sx={{ color: "#2c3e50" }}>{op.name}</Typography>
-                  {/* <Typography variant="body2" sx={{ color: "#616161" }}>{op.method} - {op.endpoint}</Typography> */}
                 </CardContent>
               </CardActionArea>
             </Card>
