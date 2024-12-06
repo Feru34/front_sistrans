@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+/* Asegúrate de importar este archivo en tu App.js o index.js, 
+   por ejemplo con: import './App.css'; */
+
+/* Fuente y reset básico */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilo global para títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  color: #2c3e50;
+  margin-top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Ajustes para contenedores */
+.MuiContainer-root {
+  padding: 2rem !important;
+}
+
+/* Tarjetas (Card) */
+.MuiCard-root {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+/* Botones */
+.MuiButton-root {
+  text-transform: none; /* Evitar mayúsculas forzadas */
+  border-radius: 4px;
+}
+
+/* Títulos */
+.MuiTypography-h4, .MuiTypography-h5, .MuiTypography-h6 {
+  margin-bottom: 1rem;
+}
+
+/* Para pantallas pequeñas, ajustar el padding del container */
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding: 1rem !important;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .MuiCard-root {
+    margin-bottom: 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* Ajustes en scroll y background */
+body {
+  background: linear-gradient(to bottom right, #ffffff, #f0f3f5);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Contenedor principal para centrar contenido verticalmente (opcional) */
+.main-content {
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Pre formateado (para JSON results) */
+pre {
+  background-color: #eef1f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: #2c3e50;
 }
