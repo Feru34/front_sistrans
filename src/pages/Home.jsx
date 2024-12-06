@@ -70,7 +70,7 @@ const Home = () => {
 
   return (
     <Container sx={{ marginTop: 4, backgroundColor: "#f9f9f9", padding: 3, borderRadius: 2 }}>
-      <Typography variant="h4" gutterBottom sx={{ color: "#2c3e50", textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom sx={{ color: "#2c3e50", textAlign: "center"}}>
         Seleccione la Operación a Realizar
       </Typography>
       <Grid container spacing={2}>
@@ -80,7 +80,7 @@ const Home = () => {
               <CardActionArea onClick={() => handleSelectOperation(op)}>
                 <CardContent sx={{ minHeight: 120, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <Typography variant="h6" sx={{ color: "#2c3e50" }}>{op.name}</Typography>
-                  <Typography variant="body2" sx={{ color: "#616161" }}>{op.method} - {op.endpoint}</Typography>
+                  {/* <Typography variant="body2" sx={{ color: "#616161" }}>{op.method} - {op.endpoint}</Typography> */}
                 </CardContent>
               </CardActionArea>
             </Card>
